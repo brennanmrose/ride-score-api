@@ -10,6 +10,7 @@ gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 
 group :development, :test do
+  gem 'factory_bot_rails', '~> 6.2'
   gem 'pry'
   gem 'rspec-rails'
   gem 'rubocop-rails'
