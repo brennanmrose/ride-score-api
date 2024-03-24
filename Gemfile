@@ -11,6 +11,7 @@ gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
 end
