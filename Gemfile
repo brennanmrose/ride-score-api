@@ -18,4 +18,10 @@ group :development, :test do
 end
 
 group :development do
+  gem 'spring'
+  gem 'spring-commands-rspec'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 6.1'
 end
