@@ -1,0 +1,19 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+# Exclude schema files from RuboCop checks
+AllCops:
+  Exclude:
+    - 'bin/bundle'
+    - 'db/schema.rb'
+    - 'db/structure.sql'
+
+# Exclude specific files or directories
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'db/migrate/*.rb'
+
+# Exclude documentation-related rules
+Style/Documentation:
+  Enabled: false
