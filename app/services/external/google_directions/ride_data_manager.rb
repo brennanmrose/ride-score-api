@@ -31,6 +31,10 @@ module External
         Rails.cache.read(cache_key_name)
       end
 
+      def compiled_data
+        @compiled_data ||= RideDataCompiler.new(ride: ride, driver: driver).call
+      end
+
       def data_from_records
         {
           'id' => ride.id,
@@ -45,12 +49,11 @@ module External
       end
 
       def process_ride_score
-        response = RideDataCompiler.new(ride: ride, driver: driver).call
-        cache_data(response)
+        cache_data(compiled_data) if compiled_data
       end
 
       def ride_data
-        data_from_records.merge(cached_data)
+        compiled_data.present? ? data_from_records.merge(compiled_data.with_indifferent_access) : {}
       end
     end
   end
