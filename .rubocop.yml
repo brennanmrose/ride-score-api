@@ -52,10 +52,13 @@ Layout/ArrayAlignment:
   StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#align-multiline-arrays
   Enabled: true
 
+Layout/ArgumentAlignment:
+  Enabled: false
+
 # Supports --auto-correct
 Layout/HashAlignment:
   Description: Align the elements of a hash literal if they span more than one line.
-  Enabled: true
+  Enabled: false
   EnforcedHashRocketStyle: key
   EnforcedColonStyle: key
   EnforcedLastArgumentHashStyle: always_inspect
