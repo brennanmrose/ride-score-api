@@ -12,7 +12,10 @@ module External
       end
 
       def call
-        calculate_earnings if fetch_directions
+        if fetch_directions
+          calculate_earnings
+          calculate_score
+        end
         @ride_data
       end
 
@@ -22,6 +25,13 @@ module External
         ride_earnings = Calculators::EarningsCalculator.new(distance: @ride_data[:ride_distance],
           duration: @ride_data[:ride_duration]).call
         @ride_data[:ride_earnings] = ride_earnings
+      end
+
+      def calculate_score
+        score = Calculators::ScoreCalculator.new(ride_earnings: @ride_data[:ride_earnings],
+          commute_duration: @ride_data[:commute_duration],
+          ride_duration: @ride_data[:ride_duration]).call
+        @ride_data[:score] = score
       end
 
       def fetch_directions

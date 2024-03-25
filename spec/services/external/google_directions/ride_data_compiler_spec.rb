@@ -20,10 +20,6 @@ RSpec.describe External::GoogleDirections::RideDataCompiler do
       it 'returns the ride data' do
         expect(call).to eq(ride_data)
       end
-
-      it 'includes the ride_earnings' do
-        expect(call[:ride_earnings]).to be_present
-      end
     end
 
     context 'when the DirectionsParser returns an empty hash' do
@@ -51,6 +47,10 @@ RSpec.describe External::GoogleDirections::RideDataCompiler do
   end
 
   def ride_data
-    parsed_directions.merge(earnings_data)
+    parsed_directions.merge(earnings_data).merge(score_data)
+  end
+
+  def score_data
+    { score: 52.381835032437436 }
   end
 end
