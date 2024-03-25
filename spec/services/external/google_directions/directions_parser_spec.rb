@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
 RSpec.describe External::GoogleDirections::DirectionsParser do
   subject(:call) do
     described_class.new(
