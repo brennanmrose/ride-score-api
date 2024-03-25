@@ -35,7 +35,7 @@ module External
 
       def parse_directions
         response = directions
-        return unless response # TEST FAILURE
+        return unless response
         parse_commute(response['routes'].first['legs'].first)
         parse_ride(response['routes'].first['legs'].last)
       end
