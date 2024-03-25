@@ -5,7 +5,6 @@ RSpec.describe External::GoogleDirections::RideDataCompiler do
 
   let(:ride) { build_stubbed(:ride) }
   let(:driver) { build_stubbed(:driver) }
-  let(:parsed_directions) { expected_parsed_directions }
 
   before do
     directions_parser = instance_double(External::GoogleDirections::DirectionsParser)
@@ -19,7 +18,11 @@ RSpec.describe External::GoogleDirections::RideDataCompiler do
   describe '#call' do
     context 'when the DirectionsParser returns parsed directions' do
       it 'returns the ride data' do
-        expect(call).to eq(parsed_directions)
+        expect(call).to eq(ride_data)
+      end
+
+      it 'includes the ride_earnings' do
+        expect(call[:ride_earnings]).to be_present
       end
     end
 
@@ -34,12 +37,20 @@ RSpec.describe External::GoogleDirections::RideDataCompiler do
 
   private
 
-  def expected_parsed_directions
+  def earnings_data
+    { ride_earnings: 31.4 }
+  end
+
+  def parsed_directions
     {
       commute_distance: 0.8,
       commute_duration: 0.058611111111111114,
       ride_distance: 17.8,
       ride_duration: 0.5408333333333334
     }
+  end
+
+  def ride_data
+    parsed_directions.merge(earnings_data)
   end
 end

@@ -12,11 +12,17 @@ module External
       end
 
       def call
-        fetch_directions
+        calculate_earnings if fetch_directions
         @ride_data
       end
 
       private
+
+      def calculate_earnings
+        ride_earnings = Calculators::EarningsCalculator.new(distance: @ride_data[:ride_distance],
+          duration: @ride_data[:ride_duration]).call
+        @ride_data[:ride_earnings] = ride_earnings
+      end
 
       def fetch_directions
         response = DirectionsParser.new(home_address: driver.home_address,
