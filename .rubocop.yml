@@ -22,6 +22,10 @@ Style/Documentation:
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
+# Exclude hash syntax rules
+Style/HashSyntax:
+  Enabled: false
+
 # Exclude NestedGroups on specs
 RSpec/NestedGroups:
   Enabled: false

@@ -78,9 +78,9 @@ RSpec.describe External::GoogleDirections::ApiClient do
   end
 
   def request_stub_url
-    'https://maps.googleapis.com/maps/api/directions/json?destination=4650%2BW%2BOlympic%2BBlvd%' \
-      '2BLos%2BAngeles%2BCA&key=API_KEY&origin=6200%2BW%2B3rd%2BSt%2BLos%2BAngeles%2BCA%2B90036&' \
-      'waypoints=via%20616%2BMasselin%2BAve%2BLos%2BAngeles%2BCA'
+    'https://maps.googleapis.com/maps/api/directions/json?destination=905%2BE%2BEl%2BSegundo%2B' \
+      'Blvd%2BLos%2BAngeles%2BCA&key=API_KEY&origin=6200%2BW%2B3rd%2BSt%2BLos%2BAngeles%2BCA%' \
+      '2B90036&waypoints=via%20616%2BMasselin%2BAve%2BLos%2BAngeles%2BCA'
   end
 
   def response_body
