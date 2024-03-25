@@ -276,6 +276,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (3.3.1)
     zeitwerk (2.6.13)
 
 PLATFORMS
@@ -302,6 +303,7 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   webmock (~> 3.19, >= 3.19.1)
+  will_paginate (~> 3.1)
 
 RUBY VERSION
    ruby 3.3.0p0
