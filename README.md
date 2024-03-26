@@ -102,6 +102,17 @@ tests, execute the following command:
   bundle exec rspec --format documentation
 ```
 
+For mocking HTTP requests in tests, WebMock is used here for its simplicity. WebMock allows for easy
+mocking of HTTP requests, enabling unit tests to run quickly and independently of external services.
+
+However, for integrations that interact with numerous external endpoints or require more
+comprehensive request/response recording and playback, VCR is a better option. VCR records real
+HTTP interactions and replays them during tests, providing a more accurate representation of
+external dependencies and reducing reliance on live external services during testing.
+
+By using VCR in such scenarios, you can achieve more reliable and deterministic tests while
+still ensuring the application behaves correctly in various integration scenarios.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
