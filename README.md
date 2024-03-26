@@ -50,6 +50,18 @@ The response will be a JSON array containing a paginated list of rides in descen
 
 For detailed API documentation, please refer to [API Documentation](./api_documentation.md).
 
+### Usage
+
+#### Caching
+
+In this sample application, a basic caching mechanism using the default memory store provided by Rails is employed. This choice is made for simplicity and ease of setup. However, in a production-level application, it is recommended to utilize a more robust caching mechanism such as Redis.
+
+If deploying this application to a production environment, consider replacing the memory store with Redis for improved performance and scalability. 
+
+#### Authentication
+
+As this application is a demo, it does not include authentication functionality. In a real-world scenario, authentication would be a crucial aspect to ensure the security and privacy of user data. If deploying this application to production, it's essential to implement proper authentication mechanisms to protect sensitive information and restrict access to authorized users.
+
 ### Testing
 
 RSpec tests are included to ensure the correctness of the application's functionality. To run the tests, execute the following command:
